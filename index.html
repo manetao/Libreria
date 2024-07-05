@@ -2,52 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>CryptoZombies front-end</title>
+    <title>Biblioteca Libre</title>
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <style>
-        body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-#connect-button {
-  background-color: #4CAF50;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#connect-button:hover {
-  background-color: #3e8e41;
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Conectar con MetaMask</h1>
-    <button id="connect-button">Conectar</button>
-    <script>
-      const connectButton = document.getElementById("connect-button");
+    <header>
+      <div class="container">
+          <h1>Biblioteca Libre</h1>
+          <nav>
+              <ul>
+                  <li>
+                      <form class="search-form">
+                          <input type="text" placeholder="Buscar por nombre">
+                          <button type="submit">Buscar</button>
+                      </form>
+                  </li>
+                  <li class="connect-btn">
+                      <a id="connect-button">
+                          <img src="./Imagenes/meta.png" alt="MetaMask Logo">
+                          Conectar
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </header>
 
-      connectButton.addEventListener("click", async () => {
-        if (!window.ethereum) {
-          window.location.href = "https://metamask.io/download.html";
-          return;
-        }
-        try {
-          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-          const account = accounts[0];
-          await window.ethereum.request({
-            method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0x61" }]
-          });
-          alert(`Connected to MetaMask with account ${account}!`);
-        } catch (error) {
-          console.error(error);
-          alert(`No se ha podido conectar`);
-        }
-      });
-    </script>
+  <section class="main-content">
+      <div class="container">
+          <h2>Libros Para Comprar</h2>
+              <div class="book-list">
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+                  <div class="book">
+                      <img src="./Imagenes/Libro1.jpg" alt="Libro 1">
+                      <h3>Nombre del Libro 1</h3>
+                      <p>Autor del Libro 1</p>
+                      <p class="price">$XX.XX</p>
+                      <a href="#" class="btn">Comprar Libro</a>
+                  </div>
+              </div>
+      </div>
+      
+  </section>
+
+  <footer>
+      <div class="container">
+          <p>&copy; 2024 Biblioteca Libre.</p>
+      </div>
+  </footer>
+  <script src="index.js"></script>
   </body>
 </html>
